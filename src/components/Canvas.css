@@ -1,0 +1,7 @@
+iframe{
+    min-width: 100px;
+    min-height: 18em;
+    max-height: 18em;
+    width: 40vw;
+    height: 40vh;
+}
