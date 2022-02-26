@@ -7,6 +7,10 @@ import { Button, Row, Col, Form } from "react-bootstrap";
 import { AssertIsDefined } from "../features/Global";
 import download_html from '../assets/canvas_download.html?raw';
 
+import blank_script from '../assets/blank_script.js?raw';
+import webgl_script from '../assets/webgl_script.js?raw';
+import three_script from '../assets/three_script.js?raw';
+
 /**
  * Script関数に渡されるpropsを定義する型
  * 
@@ -17,6 +21,16 @@ type ScriptType = {
     path: string;
     emitScripts: (str: string) => void;
 };
+
+const scripts_dict: { [name: string]: string } = {
+    "blank":blank_script,
+    "webgl": webgl_script,
+    "three":three_script
+}
+
+console.log(scripts_dict["blank"]);
+console.log(scripts_dict["webgl"]);
+console.log(scripts_dict["three"]);
 
 /**
  * スクリプト用のHook
@@ -41,12 +55,15 @@ export default function Script(props: ScriptType) {
     useEffect(() => {
         const textarea = document.querySelector('textarea');
         AssertIsDefined(textarea);
-        fetch(`./src/assets/${props.path}_script.js`)
+        /* fetch(`./src/assets/${props.path}_script.js`)
             .then(res => res.text())
             .then(data => {
                 textarea.value = data;
                 props.emitScripts(data);
-            })
+            }) */
+        const script = scripts_dict[props.path];
+        textarea.value = script;
+        props.emitScripts(script);
     }, [props.path])
 
     return (
