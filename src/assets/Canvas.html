@@ -9,16 +9,19 @@
 <body>
     <canvas></canvas>
     <textarea></textarea>
-    <style>
-        canvas {
-            width: 100vw;
-            height: 100vh;
-        }
 
+    <style>
         textarea {
             display: none;
         }
     </style>
+
+    <script>
+        const canvas=document.querySelector('canvas');
+        canvas.width=window.innerWidth;
+        canvas.height=window.innerHeight;
+    </script>
+    
     <script type="module">
         console.log = function (...data) {
             const textarea = document.querySelector('textarea');
