@@ -9,7 +9,7 @@ import './App.css'
 import Canvas from './Canvas'
 import Script from './Script'
 import Navbar from './Navbar'
-import Console from './Console'
+import LogOutput from './LogOutput'
 
 import { Col, Container, Row } from 'react-bootstrap'
 
@@ -37,7 +37,7 @@ export default function App() {
           <Canvas script={script} emitLog={SetLog} />
         </Col>
         <Col>
-          <Console log={log} />
+          <LogOutput log={log} />
         </Col>
       </Row>
       <Row>

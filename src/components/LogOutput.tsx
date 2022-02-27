@@ -2,7 +2,7 @@
  * Console.tsx
  */
 
-import "./Console.css";
+import "./LogOutput.css";
 
 /**
  * Console関数に渡されるpropsを定義する型
@@ -20,7 +20,7 @@ type ConsoleType = {
  * @param props 外部のComponentから送られるpros
  * @returns Console.tsxを構成するDOM
  */
-export default function Console(props: ConsoleType) {
+export default function LogOutput(props: ConsoleType) {
 
     return (
         <div>
