@@ -6,4 +6,4 @@ export function AssertIsDefined<T>(val: T): asserts val is NonNullable<T>{
     }
 }
 
-export const repository_link = "https://react-bootstrap.github.io/components/navs/";
+export const repository_link = "https://github.com/SLQPD276dW/OneCanvas";
