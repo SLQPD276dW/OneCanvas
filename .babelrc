@@ -1,0 +1,19 @@
+{
+    "plugins": [
+        [
+            "prismjs",
+            {
+                "languages": [
+                    "javascript",
+                    "log"
+                ],
+                "plugins": [
+                    "line-numbers",
+                    "show-language"
+                ],
+                "theme": "coy",
+                "css": true
+            }
+        ]
+    ]
+}

@@ -2,6 +2,9 @@
  * Console.tsx
  */
 
+import { useEffect } from "react";
+import Prism from 'prismjs';
+import { AssertIsDefined } from "../features/Global";
 import "./LogOutput.css";
 
 /**
@@ -22,13 +25,20 @@ type ConsoleType = {
  */
 export default function LogOutput(props: ConsoleType) {
 
+    // props.logが更新されたらハイライトする
+    useEffect(() => {
+        const code = document.querySelector('code');
+        AssertIsDefined(code);
+        Prism.highlightElement(code);
+    }, [props.log]);
+
     return (
         <div>
-            <pre>
-                <code className="language-js">
+            <pre className="line-numbers show-language">
+                <code className="language-log">
                     {props.log}
                 </code>
             </pre>
-      </div>  
+        </div>
     );
 }
