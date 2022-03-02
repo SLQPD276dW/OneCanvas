@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from 'react';
 import { AssertIsDefined } from '../features/Global';
 import "./Canvas.css";
 import canvas_html from '../assets/Canvas.html?raw';
+import console_logoutput from '../assets/ConsoleLogOutput.js?raw';
 
 /**
  * Canvas関数に送られるpropsを定義する型
@@ -41,7 +42,7 @@ export default function Canvas(props: CanvasType) {
 
             const html_lens = canvas_html.split('// Scriptを挿入');
 
-            iframe_element.srcdoc = html_lens[0] + `${props.script}` + html_lens[1];
+            iframe_element.srcdoc = html_lens[0] + `${console_logoutput}` + `${props.script}` + html_lens[1];
 
             iframe_element.onload = function () {
                 const iframe_document = iframe_element.contentDocument;
