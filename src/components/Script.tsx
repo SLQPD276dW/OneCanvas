@@ -28,10 +28,6 @@ const scripts_dict: { [name: string]: string } = {
     "three":three_script
 }
 
-console.log(scripts_dict["blank"]);
-console.log(scripts_dict["webgl"]);
-console.log(scripts_dict["three"]);
-
 /**
  * スクリプト用のHook
  * キャンバスに反映するスクリプトを保持・送信する
@@ -55,12 +51,6 @@ export default function Script(props: ScriptType) {
     useEffect(() => {
         const textarea = document.querySelector('textarea');
         AssertIsDefined(textarea);
-        /* fetch(`./src/assets/${props.path}_script.js`)
-            .then(res => res.text())
-            .then(data => {
-                textarea.value = data;
-                props.emitScripts(data);
-            }) */
         const script = scripts_dict[props.path];
         textarea.value = script;
         props.emitScripts(script);
