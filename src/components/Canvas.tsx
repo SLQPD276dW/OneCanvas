@@ -46,7 +46,8 @@ export default function Canvas(props: CanvasType) {
 
             iframe_element.onload = function () {
                 const iframe_document = iframe_element.contentDocument;
-                const iframe_textarea = iframe_document?.querySelector('textarea');
+                AssertIsDefined(iframe_document);
+                const iframe_textarea = iframe_document.querySelector('textarea');
                 AssertIsDefined(iframe_textarea);
                 props.emitLog(iframe_textarea.value);
             }
