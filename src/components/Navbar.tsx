@@ -3,7 +3,7 @@
  */
 
 import { Nav, NavDropdown, Modal, Button } from 'react-bootstrap';
-import { AssertIsDefined, repository_link } from '../features/Global';
+import { CheckNullOrUndefined, repository_link } from '../features/Global';
 import { useState } from 'react';
 import './Navbar.css';
 
@@ -66,7 +66,7 @@ export default function Navbar(props: NavbarType) {
                 </Nav.Item>
                 <NavDropdown title="Examples" id="nav-dropdown" className="fw-bold fs-1"
                     onSelect={(selectedKey) => {
-                        AssertIsDefined(selectedKey);
+                        CheckNullOrUndefined(selectedKey);
                         props.emitPath(selectedKey);
                     }}>
                     <NavDropdown.Item eventKey="blank">Blank</NavDropdown.Item>

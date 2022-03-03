@@ -4,7 +4,7 @@
 
 import { useEffect } from "react";
 import Prism from 'prismjs';
-import { AssertIsDefined } from "../features/Global";
+import { CheckNullOrUndefined } from "../features/Global";
 import "./LogOutput.css";
 
 /**
@@ -28,7 +28,7 @@ export default function LogOutput(props: ConsoleType) {
     // props.logが更新されたらハイライトする
     useEffect(() => {
         const code = document.querySelector('code');
-        AssertIsDefined(code);
+        CheckNullOrUndefined(code);
         if (code.textContent === "") {
             code.textContent="ここにLogが出力されます。"
         }

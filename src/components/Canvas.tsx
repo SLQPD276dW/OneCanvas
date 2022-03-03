@@ -3,7 +3,7 @@
  */
 
 import { useEffect, useRef, useState } from 'react';
-import { AssertIsDefined } from '../features/Global';
+import { CheckNullOrUndefined } from '../features/Global';
 import "./Canvas.css";
 import canvas_html from '../assets/Canvas.html?raw';
 import console_logoutput from '../assets/ConsoleLogOutput.js?raw';
@@ -38,7 +38,7 @@ export default function Canvas(props: CanvasType) {
     useEffect(() => {
         if (isLoading === false) {
             const iframe_element = document.querySelector('iframe');
-            AssertIsDefined(iframe_element);
+            CheckNullOrUndefined(iframe_element);
 
             const html_lens = canvas_html.split('// Scriptを挿入');
 
@@ -46,9 +46,9 @@ export default function Canvas(props: CanvasType) {
 
             iframe_element.onload = function () {
                 const iframe_document = iframe_element.contentDocument;
-                AssertIsDefined(iframe_document);
+                CheckNullOrUndefined(iframe_document);
                 const iframe_textarea = iframe_document.querySelector('textarea');
-                AssertIsDefined(iframe_textarea);
+                CheckNullOrUndefined(iframe_textarea);
                 props.emitLog(iframe_textarea.value);
             }
         }

@@ -1,7 +1,7 @@
-export function AssertIsDefined<T>(val: T): asserts val is NonNullable<T>{
-    if (val === undefined || val === null) {
+export function CheckNullOrUndefined<T>(variable: T): asserts variable is NonNullable<T>{
+    if (variable === undefined || variable === null) {
         throw new Error(
-            `Expected 'val' to be defined, but received ${val}`
+            `variableは${variable}です。`
         );
     }
 }

@@ -4,7 +4,7 @@
 
 import React, { useEffect, useState } from "react";
 import { Button, Row, Col, Form } from "react-bootstrap";
-import { AssertIsDefined } from "../features/Global";
+import { CheckNullOrUndefined } from "../features/Global";
 import download_html from '../assets/canvas_download.html?raw';
 
 import blank_script from '../assets/blank_script.js?raw';
@@ -50,7 +50,7 @@ export default function Script(props: ScriptType) {
      */
     useEffect(() => {
         const textarea = document.querySelector('textarea');
-        AssertIsDefined(textarea);
+        CheckNullOrUndefined(textarea);
         const script = scripts_dict[props.path];
         textarea.value = script;
         props.emitScripts(script);
@@ -95,7 +95,7 @@ export default function Script(props: ScriptType) {
  */
 function download(filename: string): void {
     const textarea = document.querySelector('textarea');
-    AssertIsDefined(textarea);
+    CheckNullOrUndefined(textarea);
 
     const download_html_splits = download_html.split('// Scriptを挿入');
     const content = download_html_splits[0] + textarea.value + download_html_splits[1];
