@@ -29,6 +29,9 @@ export default function LogOutput(props: ConsoleType) {
     useEffect(() => {
         const code = document.querySelector('code');
         AssertIsDefined(code);
+        if (code.textContent === "") {
+            code.textContent="ここにLogが出力されます。"
+        }
         Prism.highlightElement(code);
     }, [props.log]);
 
