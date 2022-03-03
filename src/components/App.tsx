@@ -30,7 +30,7 @@ export default function App() {
   const [path, SetPath] = useState("webgl");
 
   return (
-    <Container className="justify-content-center">
+    <Container fluid className="justify-content-center">
       <Navbar emitPath={SetPath}/>
       <Row>
         <Col>
