@@ -77,7 +77,7 @@ export default function Script(props: ScriptType) {
             </Form>
 
             <Col>
-                <textarea className="form-control" rows={10}
+                <textarea className="form-control" rows={10} spellCheck="false"
                     onChange={
                         (element: React.ChangeEvent<HTMLTextAreaElement>) => {
                             window.clearTimeout(textarea_timeout);
