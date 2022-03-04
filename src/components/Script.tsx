@@ -23,9 +23,9 @@ type ScriptType = {
 };
 
 const scripts_dict: { [name: string]: string } = {
-    "blank":blank_script,
+    "blank": blank_script,
     "webgl": webgl_script,
-    "three":three_script
+    "three": three_script
 }
 
 /**
@@ -76,14 +76,16 @@ export default function Script(props: ScriptType) {
                 </Form.Group>
             </Form>
 
-            <textarea className="form-control" rows={10}
-                onChange={
-                    (element: React.ChangeEvent<HTMLTextAreaElement>) => {
-                        window.clearTimeout(textarea_timeout);
-                        textarea_timeout = window.setTimeout(props.emitScripts, emit_interval * 1000, element.target.value);
-                    }
-                }>
-            </textarea>
+            <Col>
+                <textarea className="form-control" rows={10}
+                    onChange={
+                        (element: React.ChangeEvent<HTMLTextAreaElement>) => {
+                            window.clearTimeout(textarea_timeout);
+                            textarea_timeout = window.setTimeout(props.emitScripts, emit_interval * 1000, element.target.value);
+                        }
+                    }>
+                </textarea>
+            </Col>
         </Row>
     );
 };
