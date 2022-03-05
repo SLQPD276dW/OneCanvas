@@ -2,13 +2,18 @@
  * Navbar.tsx
  */
 
-import { Nav, NavDropdown, Modal, Button } from 'react-bootstrap';
-import { CheckNullOrUndefined, repository_link } from '../features/Global';
 import { useState } from 'react';
-import './Navbar.css';
 
-import "bootstrap-icons/font/bootstrap-icons.css";
+// Components
 import AboutModal from './AboutModal';
+
+// Features
+import { CheckNullOrUndefined, repository_link } from '../features/Global';
+
+// CSS
+import './Navbar.css';
+import { Nav, NavDropdown } from 'react-bootstrap';
+import "bootstrap-icons/font/bootstrap-icons.css";
 
 /**
  * Navbar関数に渡されるpropsを定義する型

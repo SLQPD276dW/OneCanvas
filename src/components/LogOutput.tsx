@@ -4,7 +4,11 @@
 
 import { useEffect } from "react";
 import Prism from 'prismjs';
+
+// Features
 import { CheckNullOrUndefined } from "../features/Global";
+
+// CSS
 import "./LogOutput.css";
 
 /**

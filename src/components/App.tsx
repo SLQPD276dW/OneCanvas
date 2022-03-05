@@ -2,16 +2,17 @@
  * App.tsx
  */
 
-import { useState } from 'react'  
-import './App.css'
+import { useState } from 'react';
 
 // Components
-import Canvas from './Canvas'
-import Script from './Script'
-import Navbar from './Navbar'
-import LogOutput from './LogOutput'
+import Canvas from './Canvas';
+import Script from './Script';
+import Navbar from './Navbar';
+import LogOutput from './LogOutput';
 
-import { Col, Container, Row } from 'react-bootstrap'
+// CSS
+import './App.css';
+import { Col, Container, Row } from 'react-bootstrap';
 
 /**
  * One Canvasを構成するHook

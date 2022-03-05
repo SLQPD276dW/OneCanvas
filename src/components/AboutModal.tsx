@@ -2,6 +2,7 @@
  * AboutModal.tsx
  */
 
+// CSS
 import { Modal, Button } from 'react-bootstrap';
 
 /**

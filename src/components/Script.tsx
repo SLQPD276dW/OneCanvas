@@ -3,13 +3,18 @@
  */
 
 import React, { useEffect, useState } from "react";
-import { Button, Row, Col, Form } from "react-bootstrap";
-import { CheckNullOrUndefined } from "../features/Global";
-import download_html from '../assets/canvas_download.html?raw';
 
+// Features
+import { CheckNullOrUndefined } from "../features/Global";
+
+// Assets
+import download_html from '../assets/canvas_download.html?raw';
 import blank_script from '../assets/blank_script.js?raw';
 import webgl_script from '../assets/webgl_script.js?raw';
 import three_script from '../assets/three_script.js?raw';
+
+// CSS
+import { Button, Row, Col, Form } from "react-bootstrap";
 
 /**
  * Script関数に渡されるpropsを定義する型

@@ -2,11 +2,17 @@
  * Canvas.tsx
  */
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect } from 'react';
+
+// Features
 import { CheckNullOrUndefined } from '../features/Global';
-import "./Canvas.css";
+
+// Assets
 import canvas_html from '../assets/Canvas.html?raw';
 import console_logoutput from '../assets/ConsoleLogOutput.js?raw';
+
+// CSS
+import "./Canvas.css";
 
 /**
  * Canvas関数に送られるpropsを定義する型
