@@ -22,6 +22,7 @@ type ScriptType = {
     emitScripts: (str: string) => void;
 };
 
+// assetsフォルダに置いてあるスクリプトに名前を紐づける配列 {[スクリプト名]: スクリプト}
 const scripts_dict: { [name: string]: string } = {
     "blank": blank_script,
     "webgl": webgl_script,

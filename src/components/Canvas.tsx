@@ -33,7 +33,7 @@ export default function Canvas(props: CanvasType) {
 
     /**
      * props.scriptに変更があった場合のみ実行
-     * iframeに
+     * iframeに表示したいhtmlを文字列にしてsrcdocに代入
      */
     useEffect(() => {
         if (isLoading === false) {
