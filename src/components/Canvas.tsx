@@ -13,6 +13,7 @@ import console_logoutput from '../assets/ConsoleLogOutput.js?raw';
 
 // CSS
 import "./Canvas.css";
+import { Ratio } from 'react-bootstrap';
 
 /**
  * Canvas関数に送られるpropsを定義する型
@@ -62,8 +63,9 @@ export default function Canvas(props: CanvasType) {
 
     return (
         <div>
-            {/* scrollingとframeBorderは非推奨であるため削除予定*/}
-            <iframe scrolling='no' frameBorder="0"></iframe>
+            <Ratio aspectRatio="16x9">
+                <iframe scrolling='no'></iframe>
+            </Ratio>
         </div>
     );
 };
