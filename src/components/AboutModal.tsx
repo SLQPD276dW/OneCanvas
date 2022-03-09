@@ -24,12 +24,24 @@ type AboutModalType = {
  */
 export default function AboutModal(props: AboutModalType) {
     return (
-        <Modal show={props.is_open} onHide={props.closeModal}>
+        <Modal size="lg" show={props.is_open} onHide={props.closeModal}>
             <Modal.Header closeButton>
                 <Modal.Title>One Canvasについて</Modal.Title>
             </Modal.Header>
-            <Modal.Body>One CanvasはCanvas1つだけを配置したWebアプリです。
-                WebGLの勉強などにお使いください。
+            <Modal.Body>
+                <p>One CanvasはCanvas1つだけを配置したWebアプリです。<br />
+                    WebGLの勉強などにお使いください。</p>
+                
+                <h3>使い方</h3>
+
+                <p>下のテキストエリアからコードを入力すると、左上のキャンバスにすぐに反映されます。<br />
+                テキストエリアにconsole.logを打ち込むと、右上のログ表示画面に反映されます。<br />
+                (console.log(“Hello“);と打ち込むと、ログ表示画面には「Hello」と表示されます。)<br />
+                (console.warnやconsole.infoなどの他のメソッドについてはまだ対応しておりません。<br />
+                今後のアップデートで対応する予定です。ご不便をおかけして申し訳ございません。)</p>
+                中央右の「Download」ボタンを押すと、テキストエリアに入力されたコードとキャンバスを含んだhtmlファイルをダウンロードできます。
+                ファイル名はボタン左の「ファイル名」入力欄から入力ください。<br />
+                (何も入力しなければ、ファイル名は「canvas.html」となります。)
             </Modal.Body>
             <Modal.Footer>
                 <Button variant="secondary" onClick={props.closeModal}>
