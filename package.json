@@ -1,6 +1,6 @@
 {
-  "name": "vite-jsexe-react",
-  "version": "0.0.0",
+  "name": "One Canvas",
+  "version": "1.0.0",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
