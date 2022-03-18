@@ -2,14 +2,12 @@
  * Script.tsx
  */
 
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 
 // Features
-import { CheckNullOrUndefined } from "../features/Global";
 import { download_htmlfile } from "../features/Download";
 
 // Assets
-import download_html from '../assets/canvas_download.html?raw';
 import blank_script from '../assets/blank_script.js?raw';
 import webgl_script from '../assets/webgl_script.js?raw';
 import three_script from '../assets/three_script.js?raw';
