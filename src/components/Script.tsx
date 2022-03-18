@@ -58,10 +58,8 @@ export default function Script(props: ScriptType) {
      * 受けとったパスのファイルから中身を読み込みtextareaに表示する
      */
     useEffect(() => {
-        const textarea = document.querySelector('textarea');
-        CheckNullOrUndefined(textarea);
         const script = scripts_dict[props.path];
-        textarea.value = script;
+        textareaRef.current!.value = script;
         props.emitScripts(script);
     }, [props.path])
 
