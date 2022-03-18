@@ -2,10 +2,11 @@
  * Script.tsx
  */
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 
 // Features
 import { CheckNullOrUndefined } from "../features/Global";
+import { download_htmlfile } from "../features/Download";
 
 // Assets
 import download_html from '../assets/canvas_download.html?raw';
@@ -50,6 +51,9 @@ export default function Script(props: ScriptType) {
     // ダウンロードする際に設定するファイル名
     const [filename, SetFileName] = useState("canvas");
 
+    // textareaの参照
+    const textareaRef = useRef<HTMLTextAreaElement>(null);
+
     /**
      * props.pathに変更があった場合のみ実行
      * 受けとったパスのファイルから中身を読み込みtextareaに表示する
@@ -77,13 +81,13 @@ export default function Script(props: ScriptType) {
                         } />
                     </Col>
                     <Col sm="2">
-                        <Button variant="primary" onClick={() => download(filename)}>Download</Button>
+                        <Button variant="primary" onClick={() => download_htmlfile(filename, textareaRef.current!.value)}>Download</Button>
                     </Col>
                 </Form.Group>
             </Form>
 
             <Col>
-                <textarea className="form-control" rows={10} spellCheck="false"
+                <textarea className="form-control" rows={10} spellCheck="false" ref={textareaRef}
                     onChange={
                         (element: React.ChangeEvent<HTMLTextAreaElement>) => {
                             window.clearTimeout(textarea_timeout);
@@ -95,29 +99,3 @@ export default function Script(props: ScriptType) {
         </Row>
     );
 };
-
-/**
- * textarea内に書かれたスクリプトをhtmlファイルとしてダウンロードする処理
- * 
- * @param filename 保存する時のファイル名
- */
-function download(filename: string): void {
-    const textarea = document.querySelector('textarea');
-    CheckNullOrUndefined(textarea);
-
-    const download_html_splits = download_html.split('// Scriptを挿入');
-    const content = download_html_splits[0] + textarea.value + download_html_splits[1];
-
-    const blob = new Blob([content], { "type": "text/html" });
-
-    // filenameが空ならば'canvas'を代入する
-    if (filename === "") {
-        filename = 'canvas';
-    }
-
-    const link = document.createElement('a');
-    link.download = filename + '.html';
-    link.href = URL.createObjectURL(blob);
-    link.click();
-    URL.revokeObjectURL(link.href);
-}
