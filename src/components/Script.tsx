@@ -48,11 +48,10 @@ export default function Script(props: ScriptType) {
     // textareaで変更があってから外部のComponentへ送信するまでの時間(ミリ秒)
     const emit_interval = 0.75;
 
-    // ダウンロードする際に設定するファイル名
-    const [filename, SetFileName] = useState("canvas");
-
     // textareaの参照
     const textareaRef = useRef<HTMLTextAreaElement>(null);
+    // inputの参照
+    const inputRef = useRef<HTMLInputElement>(null);
 
     /**
      * props.pathに変更があった場合のみ実行
@@ -74,14 +73,15 @@ export default function Script(props: ScriptType) {
                         ファイル名:
                     </Form.Label>
                     <Col sm="5">
-                        <Form.Control placeholder={filename} onChange={
-                            (element: React.ChangeEvent<HTMLInputElement>) => {
-                                SetFileName(element.target.value);
-                            }
-                        } />
+                        <Form.Control placeholder="canvas" ref={inputRef} />
                     </Col>
                     <Col sm="2">
-                        <Button variant="primary" onClick={() => download_htmlfile(filename, textareaRef.current!.value)}>Download</Button>
+                        <Button variant="primary"
+                            onClick={() =>
+                                download_htmlfile(inputRef.current!.value, textareaRef.current!.value)
+                            }>
+                            Download]
+                        </Button>
                     </Col>
                 </Form.Group>
             </Form>
