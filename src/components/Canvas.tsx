@@ -8,8 +8,8 @@ import { useEffect } from 'react';
 import { CheckNullOrUndefined } from '../features/Global';
 
 // Assets
-import canvas_html from '../assets/Canvas.html?raw';
-import console_logoutput from '../assets/ConsoleLogOutput.js?raw';
+import canvas_html from '../assets/html/Canvas.html?raw';
+import console_logoutput from '../assets/js/ConsoleLogOutput.js?raw';
 
 // CSS
 import "./Canvas.css";

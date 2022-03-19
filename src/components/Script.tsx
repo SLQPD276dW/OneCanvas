@@ -8,9 +8,9 @@ import React, { useEffect, useRef } from "react";
 import { download_htmlfile } from "../features/Download";
 
 // Assets
-import blank_script from '../assets/blank_script.js?raw';
-import webgl_script from '../assets/webgl_script.js?raw';
-import three_script from '../assets/three_script.js?raw';
+import blank_script from '../assets/js/blank_script.js?raw';
+import webgl_script from '../assets/js/webgl_script.js?raw';
+import three_script from '../assets/js/three_script.js?raw';
 
 // CSS
 import { Button, Row, Col, Form } from "react-bootstrap";
@@ -76,7 +76,7 @@ export default function Script(props: ScriptType) {
                             onClick={() =>
                                 download_htmlfile(inputRef.current!.value, textareaRef.current!.value)
                             }>
-                            Download]
+                            Download
                         </Button>
                     </Col>
                 </Form.Group>

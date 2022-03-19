@@ -3,7 +3,7 @@
  */
 
 // Assets
-import download_html from '../assets/canvas_download.html?raw';
+import download_html from '../assets/html/canvas_download.html?raw';
 
 /**
  * 渡されたスクリプトをhtmlファイルとしてダウンロードする処理
