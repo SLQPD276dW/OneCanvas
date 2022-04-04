@@ -3,7 +3,7 @@
  */
 
 import { useEffect } from "react";
-import Prism from 'prismjs';
+// import Prism from 'prismjs';
 
 // Features
 import { CheckNullOrUndefined } from "../features/Global";
@@ -36,7 +36,7 @@ export default function LogOutput(props: ConsoleType) {
         if (code.textContent === "") {
             code.textContent="ここにLogが出力されます。"
         }
-        Prism.highlightElement(code);
+        // Prism.highlightElement(code);
     }, [props.log]);
 
     return (
