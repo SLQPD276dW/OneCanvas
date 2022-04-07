@@ -30,6 +30,10 @@ export default function App() {
   // パスを保持・受け渡しする変数(初期値:"webgl")
   const [path, SetPath] = useState("webgl");
 
+  // 環境変数を読み込むためのconsole.log(後で削除予定)
+  console.log(import.meta.env.MODE);
+  console.log(import.meta.env.VITE_TEST);
+
   return (
     <Container fluid className="justify-content-center">
       <Navbar emitPath={SetPath}/>
