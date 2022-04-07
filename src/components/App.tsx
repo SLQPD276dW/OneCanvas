@@ -33,6 +33,7 @@ export default function App() {
   // 環境変数を読み込むためのconsole.log(後で削除予定)
   console.log(import.meta.env.MODE);
   console.log(import.meta.env.VITE_TEST);
+  console.log(import.meta.env.VERCEL_TEST);
 
   return (
     <Container fluid className="justify-content-center">
