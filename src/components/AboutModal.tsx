@@ -36,9 +36,15 @@ export default function AboutModal(props: AboutModalType) {
 
                 <p>下のテキストエリアからコードを入力すると、左上のキャンバスにすぐに反映されます。<br />
                 テキストエリアにconsole.logを打ち込むと、右上のログ表示画面に反映されます。<br />
-                (console.log(“Hello“);と打ち込むと、ログ表示画面には「Hello」と表示されます。)<br />
-                (console.warnやconsole.infoなどの他のメソッドについてはまだ対応しておりません。<br />
-                今後のアップデートで対応する予定です。ご不便をおかけして申し訳ございません。)</p>
+                (console.log(“Hello“);と打ち込むと、ログ表示画面には「Hello」と表示されます。)</p>
+                    (以下のメソッドが対応しております。)
+                    <ul>
+                        <li>console.log</li>
+                        <li>console.warn</li>
+                        <li>console.error</li>
+                        <li>console.info</li>
+                        <li>console.clear</li>
+                    </ul>
                 中央右の「Download」ボタンを押すと、テキストエリアに入力されたコードとキャンバスを含んだhtmlファイルをダウンロードできます。
                 ファイル名はボタン左の「ファイル名」入力欄から入力ください。<br />
                 (何も入力しなければ、ファイル名は「canvas.html」となります。)
