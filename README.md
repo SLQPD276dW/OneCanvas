@@ -3,7 +3,7 @@
 One CanvasはCanvas1つだけを配置したWebアプリです。
 WebGLの勉強などにお使いください。
 
-URL : https://one-canvas.vercel.app/
+URL : ~~https:<span>//one-canvas</span>.vercel.app/~~
 
 ## 使い方
 
